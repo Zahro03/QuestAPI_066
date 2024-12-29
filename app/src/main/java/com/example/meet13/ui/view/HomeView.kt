@@ -15,7 +15,9 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.meet13.costumWidget.CostumeTopAppBar
+import com.example.meet13.model.Mahasiswa
 import com.example.meet13.navigation.DestinasiNavigasi
+import com.example.meet13.ui.viewModel.HomeUiState
 import com.example.meet13.ui.viewModel.HomeViewModel
 
 object DestinasiHome:DestinasiNavigasi{
@@ -63,4 +65,15 @@ fun HomeScreen(
             }
         )
     }
+}
+
+@Composable
+fun HomeStatus(
+    homeUiState: HomeUiState,
+    retryAction: () -> Unit,
+    modifier: Modifier = Modifier,
+    onDeleteClick: (Mahasiswa) -> Unit = {},
+    onDetailClick: (String) -> Unit
+){
+
 }
