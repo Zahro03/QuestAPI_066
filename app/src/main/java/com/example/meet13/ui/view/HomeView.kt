@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
@@ -125,6 +126,22 @@ fun OnError(retryAction: () -> Unit,modifier: Modifier = Modifier){
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ){
-
+        Image(
+            painter = painterResource(id = R.drawable.ic_connection_error), contentDescription = ""
+        )
+        Text(text = stringResource(R.string.loading_failed),modifier = modifier.padding(16.dp))
+        Button(onClick = retryAction){
+            Text(stringResource(R.string.retry))
+        }
     }
+}
+
+@Composable
+fun MhsLayout(
+    mahasiswa: List<Mahasiswa>,
+    modifier: Modifier = Modifier,
+    onDetailClick: (String) -> Unit,
+    onDeleteClick: (Mahasiswa) -> Unit = {}
+){
+
 }
